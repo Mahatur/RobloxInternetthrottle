@@ -1,13 +1,24 @@
 #!/bin/bash
 
+# Ask for the target username
 read -p "Enter the target username: " TARGET_USER
 
-# Define paths
-OLD_PATH="/home/mahatur/Utility"
-NEW_PATH="/home/$TARGET_USER/Utility"
+# Define the base directory
+BASE_DIR="/home/$TARGET_USER/Utility"
 
-# Replace all occurrences in scripts or configs
-find /home/"$TARGET_USER" -type f -exec sed -i "s|$OLD_PATH|$NEW_PATH|g" {} +
+# List of config files to update
+CONFIG_FILES=("togglenet.sh" "togglenet2.sh" "togglenet3.sh" "togglenet4.sh" "togglenet5.sh" "deletenet.sh" "setupnet.sh")
 
-echo "Replaced all occurrences of $OLD_PATH with $NEW_PATH for user $TARGET_USER."
+# Loop through each config file and replace "/home/user" with "/home/$TARGET_USER"
+for CONFIG in "${CONFIG_FILES[@]}"; do
+    CONFIG_PATH="$BASE_DIR/$CONFIG"
 
+    if [ -f "$CONFIG_PATH" ]; then
+        sed -i "s|/home/user|/home/$TARGET_USER|g" "$CONFIG_PATH"
+        echo "Updated: $CONFIG_PATH"
+    else
+        echo "Warning: $CONFIG_PATH not found, skipping..."
+    fi
+done
+
+echo "All specified config files updated with '/home/$TARGET_USER'."
