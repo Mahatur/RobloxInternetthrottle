@@ -3,8 +3,8 @@ Vulnerability of roblox, when i found my internet being laggy. so i decided to r
 
    Can be used for example:
 
-   Raspberry pi 4B > Windows PC
+   (Host) Raspberry pi 4B > (client) Windows PC / Android phone
 
    Or
 
-   Linux ubuntu
+   (the computer itself) Linux ubuntu
