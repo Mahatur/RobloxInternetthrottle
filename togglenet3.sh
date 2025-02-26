@@ -1,5 +1,5 @@
-INTERFACE="enp3s0"
-INTERFACE2="enp4s0"
+INTERFACE="internet"
+INTERFACE2="internet"
 DOWNLOAD="10"
 UPLOAD="0"
 FLAG_FILE="/tmp/wondershaper_active"
@@ -9,11 +9,11 @@ if [ ! -f "$FLAG_FILE" ]; then
     sudo wondershaper $INTERFACE2 $DOWNLOAD $UPLOAD
     touch "$FLAG_FILE"
     echo "You-see-freeze mode activated."
-    paplay /home/mahatur/Utility/Otherfreeze.ogg &
+    paplay /home/user/Utility/Otherfreeze.ogg &
 else
     sudo wondershaper clear $INTERFACE
     sudo wondershaper clear $INTERFACE2
     rm "$FLAG_FILE"
     echo "Normal mode restored."
-    paplay /home/mahatur/Utility/Otherthaw.ogg &
+    paplay /home/user/Utility/Otherthaw.ogg &
 fi
