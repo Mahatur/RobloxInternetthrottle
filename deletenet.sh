@@ -1,10 +1,10 @@
 #!/bin/bash
-INTERFACE="enp3s0"
-INTERFACE2="enp4s0"
+INTERFACE="internet"
+INTERFACE2="internet"
 
 sudo tc qdisc del dev $INTERFACE root
 sudo tc qdisc del dev $INTERFACE root
 sudo wondershaper clear $INTERFACE
 sudo wondershaper clear $INTERFACE
-paplay /home/mahatur/Utility/Door.ogg &
+paplay /home/user/Utility/Door.ogg &
 echo "All traffic controls cleared!"
