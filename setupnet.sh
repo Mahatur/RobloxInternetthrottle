@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # File directory
-SCRIPT_DIR="/home/mahatur/Utility"
+SCRIPT_DIR="/home/user/Utility"
 FILES=("togglenet" "togglenet2" "togglenet3" "togglenet4" "togglenet5" "deletenet")
 
 # Function to list all available network interfaces
