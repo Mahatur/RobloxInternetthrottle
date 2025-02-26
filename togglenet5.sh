@@ -1,6 +1,6 @@
 #!/bin/bash
-INTERFACE="enp3s0"
-INTERFACE2="enp4s0"
+INTERFACE="internet"
+INTERFACE2="internet"
 PIDFILE="/tmp/lag_toggle.pid"
 
 if [ -f "$PIDFILE" ]; then
@@ -23,7 +23,7 @@ sudo tc qdisc add dev $INTERFACE2 root tbf rate $RATE burst 1kbit latency $LATEN
 sleep $(awk -v min=0.10 -v max=1 'BEGIN{srand(); print min+rand()*(max-min)}')
 sudo tc qdisc del dev $INTERFACE root
 sudo tc qdisc del dev $INTERFACE2 root
-paplay /home/mahatur/Utility/timer.ogg &
+paplay /home/user/Utility/timer.ogg &
 sleep $(awk -v min=0.10 -v max=1 'BEGIN{srand(); print min+rand()*(max-min)}')
 done
 ) &
