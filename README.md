@@ -3,8 +3,8 @@ Vulnerability of roblox, when i found my internet being laggy. so i decided to r
 
    Can be used for example:
 
-   (Host) Raspberry pi 4B > (client) Windows PC / Android phone
+   (Host) Raspberry pi 4B > (client) Windows PC / Android phone or whatever device you say
 
    Or
 
-   (the computer itself) Linux ubuntu
+   (the computer itself) Linux ubuntu or something that has TC or WONDERSHAPER
