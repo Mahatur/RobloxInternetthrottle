@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # File directory
-SCRIPT_DIR="/home/user/Utility"
-FILES=("togglenet" "togglenet2" "togglenet3" "togglenet4" "togglenet5" "deletenet")
+SCRIPT_DIR="/home/mahatur/Utility"
+FILES=("togglenet.sh" "togglenet2.sh" "togglenet3.sh" "togglenet4.sh" "togglenet5.sh" "deletenet.sh")
 
 # Function to list all available network interfaces
 list_interfaces() {
@@ -57,4 +57,3 @@ for file in "${FILES[@]}"; do
 done
 
 echo "Interface settings updated in all scripts."
-
