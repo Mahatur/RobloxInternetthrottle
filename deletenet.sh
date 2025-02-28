@@ -2,6 +2,7 @@
 INTERFACE="internet"
 INTERFACE2="internet"
 
+sudo rm /tmp/wondershaper_active
 sudo tc qdisc del dev $INTERFACE root
 sudo tc qdisc del dev $INTERFACE2 root
 sudo wondershaper clear $INTERFACE
