@@ -1,0 +1,14 @@
+Install tc and wondershaper
+
+Execute in order
+1 Setuser.sh
+2 setupnet.sh
+3 run the script
+
+togglenet1 increase latency
+togglenet2 block upload
+togglenet3 block downlaod
+togglenet4 block upload and download
+togglenet5 intentional lag
+
+sound effects are for indicators
