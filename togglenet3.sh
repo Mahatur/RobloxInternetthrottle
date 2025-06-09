@@ -1,14 +1,16 @@
+#!/bin/bash
+
 INTERFACE="internet"
 INTERFACE2="internet"
 DOWNLOAD="10"
 UPLOAD="0"
-FLAG_FILE="/tmp/wondershaper_active"
+FLAG_FILE="/home/user/Utility/wondershaper_active"
 
 if [ ! -f "$FLAG_FILE" ]; then
     sudo wondershaper $INTERFACE $DOWNLOAD $UPLOAD
     sudo wondershaper $INTERFACE2 $DOWNLOAD $UPLOAD
     touch "$FLAG_FILE"
-    echo "You-see-freeze mode activated."
+    echo "You-freeze mode activated."
     paplay /home/user/Utility/Otherfreeze.ogg &
 else
     sudo wondershaper clear $INTERFACE
