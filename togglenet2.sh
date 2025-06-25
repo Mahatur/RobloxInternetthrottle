@@ -2,7 +2,7 @@ INTERFACE="internet"
 INTERFACE2="internet"
 RATE="100mbps"
 BURST="1kbit"
-LATENCY="1000ms"
+LATENCY="1ms"
 
 CURRENT_QDISC=$(tc qdisc show dev $INTERFACE | grep "tbf")
 CURRENT_QDISC2=$(tc qdisc show dev $INTERFACE2 | grep "tbf")
