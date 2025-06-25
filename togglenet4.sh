@@ -1,33 +1,21 @@
 #!/bin/bash
+
 INTERFACE="internet"
 INTERFACE2="internet"
-DOWNLOAD="10"
-UPLOAD="0"
-PIDFILE="/tmp/wondershaper_toggle.pid"
+DELAY="25000ms"
 
-if [ -f "$PIDFILE" ]; then
-    PID=$(cat "$PIDFILE")
-    kill -9 $PID 2>/dev/null
-    rm "$PIDFILE"
-    sudo wondershaper clear $INTERFACE
-    sudo wondershaper clear $INTERFACE2
-    echo "Wondershaper toggle stopped and cleared."
-    exit 0
+CURRENT_QDISC=$(tc qdisc show dev $INTERFACE | grep "netem")
+CURRENT_QDISC2=$(tc qdisc show dev $INTERFACE2 | grep "netem")
+
+if [ -z "$CURRENT_QDISC" ] && [ -z "$CURRENT_QDISC2" ]; then
+    sudo tc qdisc add dev $INTERFACE root netem delay $DELAY
+    sudo tc qdisc add dev $INTERFACE2 root netem delay $DELAY
+    echo "Delays added to both interfaces."
+    paplay /home/user/Utility/Teleport.ogg
+    sleep 1
+elif [ -n "$CURRENT_QDISC" ] && [ -n "$CURRENT_QDISC2" ]; then
+    paplay /home/user/Utility/Teleport1.ogg
+    sudo tc qdisc del dev $INTERFACE root netem
+    sudo tc qdisc del dev $INTERFACE2 root netem
+    echo "Delays removed from both interfaces."
 fi
-
-(
-while true; do
-    # Apply wondershaper throttling
-    sudo wondershaper $INTERFACE $DOWNLOAD $UPLOAD
-    sudo wondershaper $INTERFACE2 $DOWNLOAD $UPLOAD
-    sleep 2
-    
-    # Clear wondershaper throttling
-    sudo wondershaper clear $INTERFACE
-    sudo wondershaper clear $INTERFACE2
-    paplay /home/user/Utility/timer.ogg &
-    sleep 0.1
-done
-) &
-
-echo $! > "$PIDFILE"
