@@ -13,6 +13,7 @@ if [ -z "$CURRENT_QDISC" ] && [ -z "$CURRENT_QDISC2" ]; then
     sleep 1
 elif [ -n "$CURRENT_QDISC" ] && [ -n "$CURRENT_QDISC2" ]; then
     paplay /home/user/Utility/Lag1.ogg &
+    sleep 3
     sudo tc qdisc del dev $INTERFACE root
     sudo tc qdisc del dev $INTERFACE2 root
     echo "Speed limits removed from both interfaces."
