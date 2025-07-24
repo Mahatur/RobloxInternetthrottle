@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# togglenet4.sh
 INTERFACE="internet"
 INTERFACE2="internet"
 DELAY="25000ms"
