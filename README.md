@@ -1,41 +1,71 @@
 # RobloxInternetthrottle
 
-> ⚠️ **Disclaimer**: This project is intended for **educational and diagnostic purposes only**. Do not use this to exploit Roblox or interfere with other users' gameplay. You are responsible for how you use this tool. read and follow instructions first!!!.
+> ⚠️ **Disclaimer**:  
+> This tool is intended for **educational and diagnostic purposes only**.  
+> Misuse on public servers or against other players may violate platform rules.  
+> You are solely responsible for any consequences.  
+> **Read and follow all instructions first.**
 
-## Overview
+## 🧠 Overview
 
-This script leverages Linux's traffic control (`tc`) capabilities to throttle internet speed to an extreme degree — simulating lag on demand.  
-It can create a **"freeze" effect** in Roblox, which may allow teleporting, invulnerability, or other desynchronization effects when executed properly.
+`RobloxInternetthrottle` uses Linux's traffic control system (`tc`) to throttle or freeze a device’s internet connection, simulating **lag spikes** or **freeze states**.
 
-Discovered when testing network latency during personal slow internet conditions.
+Discovered unintentionally during poor internet testing — later refined to act as an external desync mechanism for Roblox clients.
 
-## Key Features
+When throttled hard enough, Roblox will treat your client as frozen, yet still processes **local input** — allowing things like:
 
-- Toggle between **normal** and **"freeze"** mode
-- Works with any Linux system that supports `tc` and/or `wondershaper`
-- Can be run on the client itself or externally (e.g. Raspberry Pi)
+- **Hitting other players' hitboxes** before they can react  
+- **Avoiding incoming damage**  
+- **Teleport-like behavior** on reconnection
 
-## Example Use Cases
+## ✨ Features
 
-- **External control**:  
-  Raspberry Pi 4B (running the script) controlling the internet link to a **Windows PC**, Android device, IOS iphone, MACos, consoles, or any other game client.
+- Toggle between:
+  - 🟢 **Normal mode**
+  - ❄️ **"Freeze" mode**
+- External or local control
+- Minimal dependencies
+- Fast script switching with optional audio cues
 
-- **Local use**:  
-  Run directly on a **Linux-based gaming PC** to control its own connection delay.
+## 🛠 Example Use Cases
 
-## Requirements
+### 🔌 External throttle (safe & stealthy)
+Use a Raspberry Pi, Orange Pi, or any Linux device to sit *between* the game device and the internet:
 
-- Linux OS (tested on Ubuntu)
-- `tc` (traffic control utility, part of `iproute2`)
-- Optional: `paplay` for sound feedback
-- Root/sudo privileges
+```
+  [Client] <—> [Linux device] <—> [Router]
+```
 
-## Notes
+Works with:
+- Windows
+- Android
+- iOS (iPhone)
+- macOS
+- Game consoles (PS/Xbox/Switch)
 
-- The `RATE`, `BURST`,`LATENCY`, and `wondershaper` settings are purposely set to make traffic **extremely throttled**.
-- Adjust interface names as needed (`ip addr` to see yours).
-- Sound cues are optional and customizable.
+### 🖥 Local throttle
+Install and run directly on a Linux gaming machine to desync itself.
 
-## License
+## 🧩 Requirements
 
-Do whatever you want with it — just don’t blame the author if it breaks your router or gets you banned.
+- ✅ Linux (tested on Ubuntu, Arch, Raspberry Pi OS)
+- ✅ `tc` (part of `iproute2`)  
+- ✅ Root or sudo privileges
+- 🔈 Optional: `paplay` for audible feedback
+- 🧠 Optional: `wondershaper` for simpler bandwidth limits
+
+> 📦 Works on any system including **Flatpak-based environments**, as long as host networking is available and `tc` is accessible.
+
+> 👤 Adjust user with `Setuser.sh`
+> ⚙️ Adjust interfaces with `Setupnet.sh`
+
+## 🧠 Notes
+
+- You *must* ensure this does **not** break your router, home internet, or interfere with others.
+- Avoid long freezes unless testing in safe environments.
+- It’s an external-level exploit — Roblox doesn’t know it’s happening unless server-side checks exist, which the same reason you got kicked for bad internet.
+
+## 🪪 License
+
+> **Free to use, modify, and fork.**  
+> Use responsibly — and don’t blame the author if it bricks your connection or triggers a ban.
