@@ -1,16 +1,17 @@
 Install tc and wondershaper
 Unzip and name folder as Utility
-Put into /home/$USER/ (example: home/user/Utility
+Put into /home/$USER/ (example: /home/user/Utility)
 
-Execute in order
-1 Setuser.sh
-2 setupnet.sh
-3 run the script
+Execute in order:
+1. Setuser.sh
+2. Setupnet.sh
+3. Run the script
 
-togglenet1 block both
-togglenet2 block upload
-togglenet3 block downlaod
-togglenet4 intentional lag
-togglenet5 intentional lag 2
+Scripts:
+- togglenet1 → block both upload and download (total freeze)
+- togglenet2 → block upload only
+- togglenet3 → block download only
+- togglenet4 → simulate intentional lag (ping spike)
 
-sound effects are for indicators
+Sound effects:
+- Used as indicators when toggling modes (requires paplay)
