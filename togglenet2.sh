@@ -1,3 +1,5 @@
+# togglenet2.sh
+
 INTERFACE="internet"
 INTERFACE2="internet"
 RATE="100mbps"
