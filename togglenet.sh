@@ -1,3 +1,4 @@
+# togglenet.sh
 INTERFACE="internet"
 INTERFACE2="internet"
 SPEED="1kbit"
