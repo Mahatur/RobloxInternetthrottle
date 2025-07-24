@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# togglenet3.sh
 INTERFACE="internet"
 INTERFACE2="internet"
 DOWNLOAD="10"
