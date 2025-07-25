@@ -41,7 +41,8 @@ Works with:
 - Android
 - iOS (iPhone)
 - macOS
-- Game consoles (PS/Xbox/Switch)
+- Game consoles (PS5/Xbox)
+- Anything that runs Roblox
 
 ### 🖥 Local throttle
 Install and run directly on a Linux gaming machine to desync itself.
