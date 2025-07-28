@@ -11,10 +11,10 @@ if [ -z "$CURRENT_QDISC" ] && [ -z "$CURRENT_QDISC2" ]; then
     sudo tc qdisc add dev $INTERFACE root netem delay $DELAY
     sudo tc qdisc add dev $INTERFACE2 root netem delay $DELAY
     echo "Delays added to both interfaces."
-    paplay /home/user/RIT/Teleport.ogg
+    paplay /home/user/RIT/Sounds/Teleport.ogg
     sleep 1
 elif [ -n "$CURRENT_QDISC" ] && [ -n "$CURRENT_QDISC2" ]; then
-    paplay /home/user/RIT/Teleport1.ogg
+    paplay /home/user/RIT/Sounds/Teleport1.ogg
     sudo tc qdisc del dev $INTERFACE root netem
     sudo tc qdisc del dev $INTERFACE2 root netem
     echo "Delays removed from both interfaces."
