@@ -4,10 +4,10 @@
 TARGET_USER=$(whoami)
 
 # Define the base directory
-BASE_DIR="/home/$TARGET_USER/Utility"
+BASE_DIR="/home/$TARGET_USER/RIT"
 
 # List of config files to update
-CONFIG_FILES=("togglenet.sh" "togglenet2.sh" "togglenet3.sh" "togglenet4.sh" "togglenet5.sh" "setupnet.sh")
+CONFIG_FILES=("togglenet.sh" "togglenet2.sh" "togglenet3.sh" "togglenet4.sh" "setupnet.sh")
 
 # Loop through each config file and replace "/home/user" with "/home/$TARGET_USER"
 for CONFIG in "${CONFIG_FILES[@]}"; do
