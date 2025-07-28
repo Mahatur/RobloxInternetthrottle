@@ -2,7 +2,7 @@
 
 # File directory
 SCRIPT_DIR="/home/user/Utility"
-FILES=("togglenet.sh" "togglenet2.sh" "togglenet3.sh" "togglenet4.sh" "togglenet5.sh" "deletenet.sh")
+FILES=("togglenet.sh" "togglenet2.sh" "togglenet3.sh" "togglenet4.sh" "deletenet.sh")
 
 # Function to list all available network interfaces
 list_interfaces() {
