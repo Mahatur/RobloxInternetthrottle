@@ -1,0 +1,42 @@
+#!/bin/bash
+set -e
+
+# Get non-root user even if script is run with sudo
+if [ "$SUDO_USER" ]; then
+    TARGET_USER="$SUDO_USER"
+else
+    TARGET_USER=$(whoami)
+fi
+
+TARGET_HOME="/home/$TARGET_USER"
+SOURCE_DIR="$TARGET_HOME/Downloads/RobloxInternetthrottle-main"
+TARGET_DIR="$TARGET_HOME/RIT"
+
+# Ensure not running as root directly
+if [ "$EUID" -eq 0 ] && [ -z "$SUDO_USER" ]; then
+    echo "❌ Please run this script as a normal user, not directly as root."
+    exit 1
+fi
+
+# Check if the source directory exists
+if [ ! -d "$SOURCE_DIR" ]; then
+    echo "❌ Source folder '$SOURCE_DIR' not found."
+    echo "➡️ Please extract 'RobloxInternetthrottle-main.zip' to your Downloads folder first."
+    exit 1
+fi
+
+# Move folder to target location
+echo "📦 Moving RobloxInternetthrottle-main to ~/RIT..."
+mv "$SOURCE_DIR" "$TARGET_DIR"
+
+# Make setup scripts executable
+chmod +x "$TARGET_DIR/setuser.sh" "$TARGET_DIR/setupnet.sh"
+
+# Run both scripts
+echo "⚙️ Running setuser.sh..."
+"$TARGET_DIR/setuser.sh"
+
+echo "⚙️ Running setupnet.sh..."
+"$TARGET_DIR/setupnet.sh"
+
+echo "✅ RobloxInternetthrottle has been successfully installed and configured!"
