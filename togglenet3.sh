@@ -11,11 +11,11 @@ if [ ! -f "$FLAG_FILE" ]; then
     sudo wondershaper $INTERFACE2 $DOWNLOAD $UPLOAD
     touch "$FLAG_FILE"
     echo "You-freeze mode activated."
-    paplay /home/user/RIT/Otherfreeze.ogg &
+    paplay /home/user/RIT/Sounds/Otherfreeze.ogg &
 else
     sudo wondershaper clear $INTERFACE
     sudo wondershaper clear $INTERFACE2
     rm "$FLAG_FILE"
     echo "Normal mode restored."
-    paplay /home/user/RIT/Otherthaw.ogg &
+    paplay /home/user/RIT/Sounds/Otherthaw.ogg &
 fi
