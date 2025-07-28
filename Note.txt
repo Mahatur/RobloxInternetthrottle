@@ -1,17 +1,16 @@
-Install tc and wondershaper
-Unzip and name folder as Utility
-Put into /home/$USER/ (example: /home/user/Utility)
+Install tc and wondershaper (depends on distro)
 
+Unzip and run 'bash InstallRIT' in terminal
+or
+Put into /home/$USER/ (example: /home/(whoami)/RIT)
 Execute in order:
 1. Setuser.sh
 2. Setupnet.sh
 3. Run the script
-
 Scripts:
 - togglenet1 → block both upload and download (total freeze)
 - togglenet2 → block upload only
 - togglenet3 → block download only
 - togglenet4 → simulate intentional lag (ping spike)
-
 Sound effects:
 - Used as indicators when toggling modes (requires paplay)
