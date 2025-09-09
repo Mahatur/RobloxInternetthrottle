@@ -1,4 +1,4 @@
-Wondershaper apt might be broken, better to grab from github
+Wondershaper apt (Debian + Ubuntu) might be broken, better to grab from github
 solution:
 git clone https://github.com/magnific0/wondershaper.git
 cd wondershaper
