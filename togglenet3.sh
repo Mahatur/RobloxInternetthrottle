@@ -2,7 +2,7 @@
 # togglenet3.sh
 INTERFACE="internet"
 INTERFACE2="internet"
-DOWNLOAD="1"
+DOWNLOAD="10"
 UPLOAD="0"
 FLAG_FILE="/home/user/RIT/wondershaper_active"
 
