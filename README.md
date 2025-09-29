@@ -49,7 +49,7 @@ Install and run directly on a Linux gaming machine to desync itself.
 
 ## 🧩 Requirements
 
-- ✅ Linux (tested on Ubuntu, Arch orangepi, Raspberry Pi OS)
+- ✅ Linux (tested on Ubuntu, Debian, Ubuntu orangepi, Raspberry Pi OS)
 - ✅ `tc` (part of `iproute2`)  
 - ✅ Root or sudo privileges
 - 🔈 Optional: `paplay` for audible feedback
